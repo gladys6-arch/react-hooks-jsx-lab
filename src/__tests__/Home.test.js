@@ -10,13 +10,14 @@ test("renders a div with the correct ID", () => {
 });
 
 test("renders the h1 with the text 'Name is a Web Developer from City'", () => {
-  render(<Home />);
+  render(<Home/>);
 
   // Find an element with the text content `${name} is a Web Developer from ${city}`
   // This uses the variables defined in src/data/data.js
   const h1 = screen.queryByText(`${name} is a Web Developer from ${city}`);
 
   expect(h1).toBeInTheDocument();
+  expect(h1).toHaveStyle({ color: "firebrick" });
   expect(h1.tagName).toBe("H1"); // check that the element is a <h1>
 });
 
